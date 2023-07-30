@@ -1,0 +1,117 @@
+/* body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+} */
+
+
+.box {
+    width: 600px;
+    height: 700px;
+    background-color: #F5F5F5;
+    border-radius: 5%;
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    margin: 20px auto;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+form {
+    padding-left: 40px;
+}
+
+input {
+    width: 430px;
+    padding: 10px;
+    padding-left: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn-primary,
+.btn-primary:focus {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-top: 2.5px;
+    padding-bottom: 4px;
+    color: #646464;
+}
+
+.btn-primary:hover,
+.btn-primary1:hover,
+.btn-primary2:hover,
+.btn-primary3:hover,
+.btn-primary4:hover {
+    background-color: #d9d9d9;
+    color: white;
+}
+
+button span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.addedTask {
+    display: none;
+}
+
+/* #allButton {
+    position: absolute;
+    margin: auto 0;
+} */
+
+.buttons {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.btn-primary1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    width: 80px;
+    height: 40px;
+    margin-top: 2.5px;
+    padding-bottom: 1px;
+    color: #646464;
+}
+
+.btn-primary2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    width: 130px;
+    height: 40px;
+    margin-top: 2.5px;
+    padding-bottom: 1px;
+    color: #646464;
+}
+
+.btn-primary3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    margin-top: 2.5px;
+    padding-bottom: 1px;
+    color: #646464;
+}
+
+.btn-primary4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    width: 170px;
+    height: 40px;
+    margin-top: 2.5px;
+    padding-bottom: 1px;
+    color: #646464;
+}
