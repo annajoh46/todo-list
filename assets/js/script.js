@@ -20,18 +20,29 @@ let todoItems = [];
 
 function renderTodo(todo) {
     const list = document.querySelector('.list');
+    const item = document.querySelector(`[data-key='${todo.id}']`);
+
+    if (todo.deleted) {
+        item.remove();
+        return
+    }
 
     const isChecked = todo.checked ? 'done': '';
     const node = document.createElement('li');
     node.setAttribute('class', `todo-item ${isChecked}`);
     node.setAttribute('data-key', todo.id);
     node.innerHTML = `
-    <input id='${todo.id}' type='checkbox' />
+    <input id='${todo.id}' type='checkbox' class='inputCheckbox'/>
     <label for='${todo.id}' class='tick js-tick'></label>
-    <span>${todo.text}</span>
+    <span class='text'>${todo.text}</span>
+    <button class='delete-todo border border-0 bg-transparent'><img src='./assets/img/delete.png'></button>
      `;
     
-    list.append(node);
+    if (item) {
+        list.replaceChild(node, item);
+    } else {
+        list.append(node);
+    }
 }
 
 function addTask(text) {
@@ -42,6 +53,23 @@ function addTask(text) {
     };
 
     todoItems.push(todo);
+    renderTodo(todo);
+}
+
+function toggleDone(key) {
+    const index = todoItems.findIndex(item => item.id === Number(key));
+    todoItems[index].checked = !todoItems[index].checked;
+    renderTodo(todoItems[index]);
+}
+
+function deleteTodo(key) {
+    const index = todoItems.findIndex(item => item.id === Number(key));
+    const todo = {
+        deleted: true,
+        ...todoItems[index]
+    };
+    
+    todoItems = todoItems.filter(item => item.id !== Number(key));
     renderTodo(todo);
 }
 
@@ -57,3 +85,16 @@ form.addEventListener('submit', event => {
         input.focus();
     }
 });
+
+const list = document.querySelector('.list');
+list.addEventListener('click', event => {
+    if (event.target.classList.contains('tick')) {
+        const itemKey = event.target.parentElement.dataset.key;
+        toggleDone(itemKey);
+    }
+
+    if (event.target.classList.contains('delete-todo')) {
+        const itemKey = event.target.parentElement.dataset.key;
+        deleteTodo(itemKey);
+    }
+})

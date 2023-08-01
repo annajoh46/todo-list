@@ -109,7 +109,7 @@ button span {
 .btn-primary4 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: white;
-    width: 170px;
+    width: 130px;
     height: 40px;
     margin-top: 2.5px;
     padding-bottom: 1px;
@@ -119,7 +119,32 @@ button span {
 .list {
     list-style: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 15px auto;
-    font-size: 20px;
-    
+    margin: 20px auto;
+    margin-left: 40px;
+    font-size: 25px;
+}
+
+.inputCheckbox {
+    width: auto;
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+
+/* input[type="checkbox"] {
+    /* transform: scale(1.2); */
+    /* width: 17px;
+    height: 17px;
+    margin-top: 10px;
+} */
+
+input[type="checkbox"]:checked + span.text {
+    text-decoration: line-through;
+}
+
+img {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    pointer-events: none; /*made trash can clickable*/
+    margin-bottom: 2px;
 }
